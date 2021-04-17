@@ -1,0 +1,120 @@
+<head>
+    <title>
+    Calculator
+    </title>
+    <link rel="shortcut icon" href="ico.ico">
+    <link rel="apple-touch-icon " href="png.png" >
+    <link rel="icon" sizes="192*192" href="png.png" >
+    <style>
+        body
+        {
+            background-color: khaki;
+        }
+        .form
+        {
+            width: 40%;
+            box-shadow:0 0 3px 0 rgba(0,0,0, 0.3);
+            background-color: grey;
+            padding: 25px;
+            margin: 1% auto;
+            text-align: center;
+            position: relative;
+            top: 100px;
+        }
+        .field
+        {
+            height: 50px;
+            border: none;
+            outline: none;
+        }
+        .select
+        {
+            height: 50px;
+            width: 100px;
+            position: relative;
+            left: 60px;
+        }
+        .reset
+        {
+            height: 50px;
+            width: 100px;
+            position: relative;
+            left: 60px;
+            background-color: orangered;
+            outline: none;
+        }
+        .lbl
+        {
+            width: 150px;
+            display: inline-block;
+        }
+    </style>
+    <script type = "text/javascript">
+    function calc(){
+    
+    var num1 = parseFloat(document.getElementById("n1").value)
+    var num2 = parseFloat(document.getElementById("n2").value)
+    
+    
+    var calcu = document.getElementById("keys").value
+    
+    if(calcu === "+"){
+    
+    document.getElementById('result').value = num1+num2;
+    
+    }
+    if(calcu === "-"){
+    
+    document.getElementById('result').value = num1-num2;
+    
+    }
+    if(calcu === "x"){
+    
+    document.getElementById('result').value = num1*num2;
+    
+    }
+    if(calcu === "/"){
+    
+    document.getElementById('result').value = num1/num2;
+    
+    }
+    if(calcu === "%"){
+    
+    document.getElementById('result').value = num1%num2;
+    
+    }
+    }
+    function reset() {
+        window.location=("calculator.html")
+        
+    }
+
+    
+    </script>
+    </head>
+    <body>
+        <div class="form">
+    <h1>
+    Calculator
+    </h1>
+    <hr>
+    <label class="lbl">First Number: </label> <input type = "text" id = "n1" class="field" maxlength = "10" value = "0" tabindex="1" onkeyup="calc()">
+<br>
+    <br>
+    <select class="select" id = "keys" tabindex="2">
+        <option value = "+">+</option>
+        <option value = "-">-</option>
+        <option value = "x">x</option>
+        <option value = "/">/</option>
+        <option value = "%">%</option>
+    </select><br><br>
+   <label class="lbl"> Second Number: </label> <input type = "text" id = "n2" class="field" maxlength = "10" value = "0" tabindex="3" onkeyup="calc()"><br><br>
+   
+    <input type="reset" value="AC" class="reset" onclick="reset()">
+    <br>
+    <br>
+    <hr>
+    <label class="lbl">Answer: </label> <input type = "text" id = "result" class="field" value="0" readonly><br><br>
+</div>
+    </body>
+    </html>
